@@ -89,8 +89,7 @@ list(
   tar_target(
     name = list_files_2m_temperature_max,
     command = files_2m_temperature_max,
-    format = "file",
-    cue = tar_cue(mode = "never")
+    format = "file"
   ),
   # Compute max temp data
   tar_target(
