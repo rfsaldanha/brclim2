@@ -85,17 +85,11 @@ files_total_precipitation <- list.files(
 
 # Replace the target list below with your own:
 list(
-  # List max temp data
-  tar_target(
-    name = list_files_2m_temperature_max,
-    command = files_2m_temperature_max,
-    format = "file"
-  ),
   # Compute max temp data
   tar_target(
     name = max_temperature_data_sqlite,
     command = compute_zonal_statistics(
-      files_list = list_files_2m_temperature_max,
+      files_list = files_2m_temperature_max,
       sf_geom = mun_geom,
       zonal_list <- z1,
       db_file = "output_data/max_temperature_data.sqlite"
