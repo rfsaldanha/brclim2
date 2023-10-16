@@ -9,7 +9,7 @@ library(qs)
 
 ### Set target options:
 tar_option_set(
-  packages = c("zonalclim"),
+  packages = c("zonalclim", "DBI", "RSQLite", "duckdb", "glue"),
   format = "qs", 
   controller = crew::crew_controller_local(workers = 4)
 )
@@ -85,21 +85,40 @@ files_total_precipitation <- list.files(
 
 # Replace the target list below with your own:
 list(
-  # List 2m max temp data
+  # List max temp data
   tar_target(
     name = list_files_2m_temperature_max,
     command = files_2m_temperature_max,
     format = "file",
     cue = tar_cue(mode = "never")
   ),
-  # Compute 2m max temp data
+  # Compute max temp data
   tar_target(
-    name = max_temperature_data,
+    name = max_temperature_data_sqlite,
     command = compute_zonal_statistics(
       files_list = list_files_2m_temperature_max,
       sf_geom = mun_geom,
       zonal_list <- z1,
       db_file = "output_data/max_temperature_data.sqlite"
+    ),
+    format = "file",
+    cue = tar_cue(file = FALSE)
+  ),
+  # Convert max temp data to duckdb
+  tar_target(
+    name = max_temperature_data_duckdb,
+    command = sqlite2duckdb(
+      sqlite_db = max_temperature_data_sqlite,
+      duckdb_db = "output_data/max_temperature_data.duckdb"
+    ),
+    format = "file"
+  ),
+  # Convert max temp data to parquet
+  tar_target(
+    name = max_temperature_data_parquet,
+    command = duckdb2parquet(
+      duckdb_db = max_temperature_data_duckdb,
+      parquet_path = "output_data/parquet/"
     ),
     format = "file"
   )
