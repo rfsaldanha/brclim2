@@ -4,9 +4,8 @@
 ### Load packages required to define the pipeline:
 library(targets)
 library(tarchetypes)
-library(dplyr)
-library(geobr)
-library(sf)
+library(qs)
+
 
 ### Set target options:
 tar_option_set(
@@ -22,23 +21,19 @@ tar_source()
 
 # Definitions -------------------------------------------------------------
 
+# Zonal statistics sets
+z1 <- c("mean", "max", "min", "stdev", "count")
+z2 <- c("mean", "max", "min", "stdev", "sum", "count")
 
 # Municipalities geom
-sf_geom <- read_municipality(simplified = TRUE) %>%
-  st_transform(crs = 4326)
+mun_geom <- qread(file = "input_data/mun_geom.qs")
 
 # Climate NetCDF file paths
-files_2m_dewpoint_temperature <- list.files(
-  path = "/media/raphael/lacie/era5land_daily_latin_america/2m_dewpoint_temperature/", 
-  pattern = ".nc$",
-  full.names = TRUE
-)
-
 files_2m_temperature_max <- list.files(
   path = "/media/raphael/lacie/era5land_daily_latin_america/2m_temperature_max/", 
   pattern = ".nc$",
   full.names = TRUE
-)
+)[1:10]
 
 files_2m_temperature_min <- list.files(
   path = "/media/raphael/lacie/era5land_daily_latin_america/2m_temperature_min/", 
@@ -48,6 +43,12 @@ files_2m_temperature_min <- list.files(
 
 files_2m_temperature_mean <- list.files(
   path = "/media/raphael/lacie/era5land_daily_latin_america/2m_temperature_mean/", 
+  pattern = ".nc$",
+  full.names = TRUE
+)
+
+files_2m_dewpoint_temperature <- list.files(
+  path = "/media/raphael/lacie/era5land_daily_latin_america/2m_dewpoint_temperature/", 
   pattern = ".nc$",
   full.names = TRUE
 )
@@ -91,14 +92,15 @@ list(
     format = "file",
     cue = tar_cue(mode = "never")
   ),
-  # Prepare max temp data
-  # tar_target(
-  #   name = max_temperature_data,
-  #   command = prepare_climate_data(
-  #     files_list = max_temperature_data_files,
-  #     zonal_list <- c("mean"),
-  #     db_file = "output_data/max_temperature.sqlite"
-  #   ),
-  #   format = "file"
-  # )
+  # Compute 2m max temp data
+  tar_target(
+    name = max_temperature_data,
+    command = comnpute_zonal_statistics(
+      files_list = list_files_2m_temperature_max,
+      sf_geom = mun_geom,
+      zonal_list <- z1,
+      db_file = "output_data/max_temperature_data.sqlite"
+    ),
+    format = "file"
+  )
 )
