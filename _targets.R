@@ -95,7 +95,7 @@ list(
   # Compute 2m max temp data
   tar_target(
     name = max_temperature_data,
-    command = comnpute_zonal_statistics(
+    command = compute_zonal_statistics(
       files_list = list_files_2m_temperature_max,
       sf_geom = mun_geom,
       zonal_list <- z1,
