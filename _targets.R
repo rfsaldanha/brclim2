@@ -33,7 +33,7 @@ files_2m_temperature_max <- list.files(
   path = "/media/raphael/lacie/era5land_daily_latin_america/2m_temperature_max/", 
   pattern = ".nc$",
   full.names = TRUE
-)[1:10]
+)
 
 files_2m_temperature_min <- list.files(
   path = "/media/raphael/lacie/era5land_daily_latin_america/2m_temperature_min/", 
