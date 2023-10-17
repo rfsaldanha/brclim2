@@ -1,8 +1,8 @@
-files_list <- files_2m_temperature_max
-sf_geom <- mun_geom
-zonal_list <- z1
-db_file <- tempfile()
-files_pop <- files_pop
+# files_list <- files_2m_temperature_max
+# sf_geom <- mun_geom
+# zonal_list <- z1
+# db_file <- tempfile()
+# files_pop <- files_pop
 
 
 
