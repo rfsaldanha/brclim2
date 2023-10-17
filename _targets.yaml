@@ -1,0 +1,3 @@
+brazil_1950_2022:
+  script: brazil_1950_2022.R
+  store: brazil_1950_2022
