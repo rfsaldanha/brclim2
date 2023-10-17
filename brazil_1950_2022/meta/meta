@@ -1,0 +1,15 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+sqlite2duckdb|function|8ebd6d134235bf7a
+z1|object|84e64d7790f9c39a
+z2|object|469e27c731f469ca
+files_2m_temperature_mean|object|623eadf0814cce7b
+files_2m_temperature_max|object|554597049f65d5a5
+files_2m_temperature_min|object|cd3d79d4d9e6b5bb
+files_10m_u_component_of_wind|object|bafb8041682c4e79
+files_total_precipitation|object|7184c206ce996a03
+duckdb2parquet|function|8760f0abe978dc11
+files_surface_pressure|object|8a8f5a1a95979710
+compute_zonal_statistics|function|2d1a799559caa7e8
+mun_geom|object|256fc5699171569c
+files_2m_dewpoint_temperature|object|1394fbf758b13a77
+files_10m_v_component_of_wind|object|060f6c98f2897730

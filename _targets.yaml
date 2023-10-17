@@ -1,3 +1,6 @@
 brazil_1950_2022:
   script: brazil_1950_2022.R
   store: brazil_1950_2022
+brazil_2000_2020_wpop:
+  script: brazil_2000_2020_wpop.R
+  store: brazil_2000_2020_wpop
