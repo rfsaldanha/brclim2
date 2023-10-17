@@ -11,9 +11,6 @@ sqlite2duckdb <- function(sqlite_db, duckdb_db){
     dbExecute(conn_sqlite, glue("INSERT INTO '{t}_2' SELECT code_muni, strftime('%Y-%m-%d', date*24*60*60, 'unixepoch'), name, value FROM '{t}'"))
   }
   
-  # Disconnect from sqlite
-  dbDisconnect(conn_sqlite)
-  
   # Delete file if exist
   if(file.exists(duckdb_db)) unlink(duckdb_db)
   
@@ -31,7 +28,11 @@ sqlite2duckdb <- function(sqlite_db, duckdb_db){
   for(t in tables){
     dbExecute(conn_duckdb, glue("CREATE TABLE '{t}'(code_muni bigint, date date, name varchar, value float)"))
     dbExecute(conn_duckdb, glue("INSERT INTO '{t}' SELECT * FROM sqlite_scan('{sqlite_db}', '{t}_2');"))
+    dbRemoveTable(conn_sqlite, glue("{t}_2"))
   }
+  
+  # Disconnect from sqlite
+  dbDisconnect(conn_sqlite)
   
   # Disconnect from duckdb
   dbDisconnect(conn_duckdb, shutdown = TRUE)
