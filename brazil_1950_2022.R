@@ -11,7 +11,7 @@ library(qs)
 tar_option_set(
   packages = c("zonalclim", "DBI", "RSQLite", "duckdb", "glue"),
   format = "qs", 
-  controller = crew::crew_controller_local(workers = 2)
+  controller = crew::crew_controller_local(workers = 4)
 )
 
 
