@@ -92,7 +92,7 @@ list(
       files_list = files_2m_temperature_max,
       sf_geom = mun_geom,
       zonal_list <- z1,
-      db_file = "/media/raphael/lacie/brclim2/output_data/max_temperature_data.sqlite"
+      db_file = "output_data/max_temperature_data.sqlite"
     ),
     format = "file",
     cue = tar_cue(file = FALSE)
@@ -101,7 +101,7 @@ list(
     name = max_temperature_data_duckdb,
     command = sqlite2duckdb(
       sqlite_db = max_temperature_data_sqlite,
-      duckdb_db = "/media/raphael/lacie/brclim2/output_data/max_temperature_data.duckdb"
+      duckdb_db = "output_data/max_temperature_data.duckdb"
     ),
     format = "file"
   ),
@@ -109,7 +109,7 @@ list(
     name = max_temperature_data_parquet,
     command = duckdb2parquet(
       duckdb_db = max_temperature_data_duckdb,
-      parquet_path = "/media/raphael/lacie/brclim2/output_data/parquet/"
+      parquet_path = "output_data/parquet/"
     ),
     format = "file"
   ),
@@ -121,7 +121,7 @@ list(
       files_list = files_2m_temperature_min,
       sf_geom = mun_geom,
       zonal_list <- z1,
-      db_file = "/media/raphael/lacie/brclim2/output_data/min_temperature_data.sqlite"
+      db_file = "output_data/min_temperature_data.sqlite"
     ),
     format = "file",
     cue = tar_cue(file = FALSE)
@@ -130,7 +130,7 @@ list(
     name = min_temperature_data_duckdb,
     command = sqlite2duckdb(
       sqlite_db = min_temperature_data_sqlite,
-      duckdb_db = "/media/raphael/lacie/brclim2/output_data/min_temperature_data.duckdb"
+      duckdb_db = "output_data/min_temperature_data.duckdb"
     ),
     format = "file"
   ),
@@ -138,7 +138,7 @@ list(
     name = min_temperature_data_parquet,
     command = duckdb2parquet(
       duckdb_db = min_temperature_data_duckdb,
-      parquet_path = "/media/raphael/lacie/brclim2/output_data/parquet/"
+      parquet_path = "output_data/parquet/"
     ),
     format = "file"
   ),
@@ -150,7 +150,7 @@ list(
       files_list = files_2m_temperature_mean,
       sf_geom = mun_geom,
       zonal_list <- z1,
-      db_file = "/media/raphael/lacie/brclim2/output_data/mean_temperature_data.sqlite"
+      db_file = "output_data/mean_temperature_data.sqlite"
     ),
     format = "file",
     cue = tar_cue(file = FALSE)
@@ -159,7 +159,7 @@ list(
     name = mean_temperature_data_duckdb,
     command = sqlite2duckdb(
       sqlite_db = mean_temperature_data_sqlite,
-      duckdb_db = "/media/raphael/lacie/brclim2/output_data/mean_temperature_data.duckdb"
+      duckdb_db = "output_data/mean_temperature_data.duckdb"
     ),
     format = "file"
   ),
@@ -167,7 +167,7 @@ list(
     name = mean_temperature_data_parquet,
     command = duckdb2parquet(
       duckdb_db = mean_temperature_data_duckdb,
-      parquet_path = "/media/raphael/lacie/brclim2/output_data/parquet/"
+      parquet_path = "output_data/parquet/"
     ),
     format = "file"
   ),
@@ -179,7 +179,7 @@ list(
       files_list = files_2m_dewpoint_temperature,
       sf_geom = mun_geom,
       zonal_list <- z1,
-      db_file = "/media/raphael/lacie/brclim2/output_data/dewpoint_temperature_data.sqlite"
+      db_file = "output_data/dewpoint_temperature_data.sqlite"
     ),
     format = "file",
     cue = tar_cue(file = FALSE)
@@ -188,7 +188,7 @@ list(
     name = dewpoint_temperature_data_duckdb,
     command = sqlite2duckdb(
       sqlite_db = dewpoint_temperature_data_sqlite,
-      duckdb_db = "/media/raphael/lacie/brclim2/output_data/dewpoint_temperature_data.duckdb"
+      duckdb_db = "output_data/dewpoint_temperature_data.duckdb"
     ),
     format = "file"
   ),
@@ -196,7 +196,7 @@ list(
     name = dewpoint_temperature_data_parquet,
     command = duckdb2parquet(
       duckdb_db = dewpoint_temperature_data_duckdb,
-      parquet_path = "/media/raphael/lacie/brclim2/output_data/parquet/"
+      parquet_path = "output_data/parquet/"
     ),
     format = "file"
   ),
@@ -208,7 +208,7 @@ list(
       files_list = files_10m_u_component_of_wind,
       sf_geom = mun_geom,
       zonal_list <- z1,
-      db_file = "/media/raphael/lacie/brclim2/output_data/u_component_of_wind_data.sqlite"
+      db_file = "output_data/u_component_of_wind_data.sqlite"
     ),
     format = "file",
     cue = tar_cue(file = FALSE)
@@ -217,7 +217,7 @@ list(
     name = u_component_of_wind_data_duckdb,
     command = sqlite2duckdb(
       sqlite_db = u_component_of_wind_data_sqlite,
-      duckdb_db = "/media/raphael/lacie/brclim2/output_data/u_component_of_wind_data.duckdb"
+      duckdb_db = "output_data/u_component_of_wind_data.duckdb"
     ),
     format = "file"
   ),
@@ -225,7 +225,7 @@ list(
     name = u_component_of_wind_data_parquet,
     command = duckdb2parquet(
       duckdb_db = u_component_of_wind_data_duckdb,
-      parquet_path = "/media/raphael/lacie/brclim2/output_data/parquet/"
+      parquet_path = "output_data/parquet/"
     ),
     format = "file"
   ),
@@ -238,7 +238,7 @@ list(
       files_list = files_10m_v_component_of_wind,
       sf_geom = mun_geom,
       zonal_list <- z1,
-      db_file = "/media/raphael/lacie/brclim2/output_data/v_component_of_wind_data.sqlite"
+      db_file = "output_data/v_component_of_wind_data.sqlite"
     ),
     format = "file",
     cue = tar_cue(file = FALSE)
@@ -247,7 +247,7 @@ list(
     name = v_component_of_wind_data_duckdb,
     command = sqlite2duckdb(
       sqlite_db = v_component_of_wind_data_sqlite,
-      duckdb_db = "/media/raphael/lacie/brclim2/output_data/v_component_of_wind_data.duckdb"
+      duckdb_db = "output_data/v_component_of_wind_data.duckdb"
     ),
     format = "file"
   ),
@@ -255,7 +255,7 @@ list(
     name = v_component_of_wind_data_parquet,
     command = duckdb2parquet(
       duckdb_db = v_component_of_wind_data_duckdb,
-      parquet_path = "/media/raphael/lacie/brclim2/output_data/parquet/"
+      parquet_path = "output_data/parquet/"
     ),
     format = "file"
   ),
@@ -268,7 +268,7 @@ list(
       files_list = files_surface_pressure,
       sf_geom = mun_geom,
       zonal_list <- z1,
-      db_file = "/media/raphael/lacie/brclim2/output_data/surface_pressure_data.sqlite"
+      db_file = "output_data/surface_pressure_data.sqlite"
     ),
     format = "file",
     cue = tar_cue(file = FALSE)
@@ -277,7 +277,7 @@ list(
     name = surface_pressure_data_duckdb,
     command = sqlite2duckdb(
       sqlite_db = surface_pressure_data_sqlite,
-      duckdb_db = "/media/raphael/lacie/brclim2/output_data/surface_pressure_data.duckdb"
+      duckdb_db = "output_data/surface_pressure_data.duckdb"
     ),
     format = "file"
   ),
@@ -285,7 +285,7 @@ list(
     name = surface_pressure_data_parquet,
     command = duckdb2parquet(
       duckdb_db = surface_pressure_data_duckdb,
-      parquet_path = "/media/raphael/lacie/brclim2/output_data/parquet/"
+      parquet_path = "output_data/parquet/"
     ),
     format = "file"
   ),
@@ -298,7 +298,7 @@ list(
       files_list = files_total_precipitation,
       sf_geom = mun_geom,
       zonal_list <- z2,
-      db_file = "/media/raphael/lacie/brclim2/output_data/total_precipitation_data.sqlite"
+      db_file = "output_data/total_precipitation_data.sqlite"
     ),
     format = "file",
     cue = tar_cue(file = FALSE)
@@ -307,7 +307,7 @@ list(
     name = total_precipitation_data_duckdb,
     command = sqlite2duckdb(
       sqlite_db = total_precipitation_data_sqlite,
-      duckdb_db = "/media/raphael/lacie/brclim2/output_data/total_precipitation_data.duckdb"
+      duckdb_db = "output_data/total_precipitation_data.duckdb"
     ),
     format = "file"
   ),
@@ -315,7 +315,7 @@ list(
     name = total_precipitation_data_parquet,
     command = duckdb2parquet(
       duckdb_db = total_precipitation_data_duckdb,
-      parquet_path = "/media/raphael/lacie/brclim2/output_data/parquet/"
+      parquet_path = "output_data/parquet/"
     ),
     format = "file"
   )
