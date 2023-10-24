@@ -29,6 +29,7 @@ sqlite2duckdb <- function(sqlite_db, duckdb_db){
     dbExecute(conn_duckdb, glue("CREATE TABLE '{t}'(code_muni bigint, date date, name varchar, value float)"))
     dbExecute(conn_duckdb, glue("INSERT INTO '{t}' SELECT * FROM sqlite_scan('{sqlite_db}', '{t}_2');"))
     dbRemoveTable(conn_sqlite, glue("{t}_2"))
+    dbExecute(conn_sqlite, "VACUUM;")
   }
   
   # Disconnect from sqlite
@@ -36,6 +37,7 @@ sqlite2duckdb <- function(sqlite_db, duckdb_db){
   
   # Disconnect from duckdb
   dbDisconnect(conn_duckdb, shutdown = TRUE)
+  
   
   return(duckdb_db)
   
