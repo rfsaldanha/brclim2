@@ -3,6 +3,7 @@
 # targets::tar_config_set(script = "brazil_2000_2020_wpop.R", store = "brazil_2000_2020_wpop", project = "brazil_2000_2020_wpop")
 
 ### Project selector
+# Sys.setenv(TAR_PROJECT = "brazil_2023")
 # Sys.setenv(TAR_PROJECT = "brazil_1950_2022")
 # Sys.setenv(TAR_PROJECT = "brazil_2000_2020_wpop")
 
