@@ -4,3 +4,6 @@ brazil_1950_2022:
 brazil_2000_2020_wpop:
   script: brazil_2000_2020_wpop.R
   store: brazil_2000_2020_wpop
+brazil_2023:
+  script: brazil_2023.R
+  store: brazil_2023
