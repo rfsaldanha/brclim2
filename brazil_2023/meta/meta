@@ -1,0 +1,17 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+.Random.seed|object|0f0818e466ba8d16|||||||||||||||
+compute_zonal_statistics|function|804b887fa683c89f|||||||||||||||
+duckdb2parquet|function|8760f0abe978dc11|||||||||||||||
+files_10m_u_component_of_wind|object|bb62fdf49d29f183|||||||||||||||
+files_10m_v_component_of_wind|object|f4355b39cd34df50|||||||||||||||
+files_2m_dewpoint_temperature|object|3f95798ef512e75a|||||||||||||||
+files_2m_temperature_max|object|2a58874e3e3e15d0|||||||||||||||
+files_2m_temperature_mean|object|af014e46c30dcbaa|||||||||||||||
+files_2m_temperature_min|object|d69c0d88f82850e3|||||||||||||||
+files_surface_pressure|object|ef46db3751d8e999|||||||||||||||
+files_total_precipitation|object|a5c10452b0e346eb|||||||||||||||
+mun_geom|object|256fc5699171569c|||||||||||||||
+sqlite2duckdb|function|1d4baced1774d6a8|||||||||||||||
+surface_pressure_data_sqlite|stem||31acf9d35d70e3c6|4a245cf4712e23c1|607984954||t19682.6341342261s||0|file|local|vector|||1.828||rast filename is empty. Provide a valid filename
+z1|object|84e64d7790f9c39a|||||||||||||||
+z2|object|469e27c731f469ca|||||||||||||||
