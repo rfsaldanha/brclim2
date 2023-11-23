@@ -7,3 +7,6 @@ brazil_2000_2020_wpop:
 brazil_2023:
   script: brazil_2023.R
   store: brazil_2023
+mozambique_2000_2022:
+  script: mozambique_2000_2022.R
+  store: mozambique_2000_2022

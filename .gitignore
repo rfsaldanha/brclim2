@@ -33,10 +33,11 @@ docs/
 po/*~
 # RStudio Connect folder
 rsconnect/
-
 # Data files
 *.csv
 *.qs
 *.sqlite
 *.duckdb
 *.parquet
+*.zip
+mozambique_2000_2022
