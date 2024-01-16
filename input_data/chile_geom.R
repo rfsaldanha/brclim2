@@ -1,13 +1,13 @@
 library(magrittr)
 
-mozambique_geom <- sf::read_sf("input_data/shapes_mocambique/Localidades.shp") %>%
+chile_geom <- sf::read_sf("input_data/shapes_chile/Datos_Geoestadisticos_Region_Provincia_SS_Comunas.shp") %>%
   sf::st_make_valid() %>%
   sf::st_transform(crs = 4326) %>%
-  dplyr::rename(code_muni = GID_3) %>%
-  dplyr::mutate(code_muni = stringr::str_remove_all(code_muni, "MOZ")) %>%
-  dplyr::mutate(code_muni = stringr::str_remove_all(code_muni, "[\\.]")) %>%
-  dplyr::mutate(code_muni = stringr::str_remove_all(code_muni, "[\\_]"))
+  dplyr::select(code_muni = CUT_COM, name = COMUNA) %>%
+  rmapshaper::ms_simplify(keep = 0.01, keep_shapes = TRUE)
 
-qs::qsave(x = mozambique_geom, file = "input_data/mozambique_geom.qs")
+sf::write_sf(chile_geom, "input_data/shapes_chile/Datos_Geoestadisticos_Region_Provincia_SS_Comunas_simp.shp")
 
-table(table(unique(mozambique_geom$code_muni)) > 1)
+qs::qsave(x = chile_geom, file = "input_data/chile_geom.qs")
+
+table(table(unique(chile_geom$code_muni)) > 1)
