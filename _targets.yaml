@@ -10,3 +10,6 @@ brazil_2023:
 mozambique_2000_2022:
   script: mozambique_2000_2022.R
   store: mozambique_2000_2022
+chile_2000_2022:
+  script: chile_2000_2022.R
+  store: chile_2000_2022
