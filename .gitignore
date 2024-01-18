@@ -41,3 +41,5 @@ rsconnect/
 *.parquet
 *.zip
 mozambique_2000_2022
+googleauthr-auth-key.json
+googlecloudstorager-auth-key.json

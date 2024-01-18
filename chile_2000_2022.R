@@ -35,11 +35,17 @@ files_2m_temperature_max <- list.files(
   full.names = TRUE
 )
 
+files_2m_temperature_max <- files_2m_temperature_max[grepl("(200[0-9]|201[0-9]|202[0-2])", files_2m_temperature_max)]
+
+
 files_2m_temperature_min <- list.files(
   path = "/media/raphael/lacie/era5land_daily_latin_america/2m_temperature_min/", 
   pattern = ".nc$",
   full.names = TRUE
 )
+
+files_2m_temperature_min <- files_2m_temperature_min[grepl("(200[0-9]|201[0-9]|202[0-2])", files_2m_temperature_min)]
+
 
 files_2m_temperature_mean <- list.files(
   path = "/media/raphael/lacie/era5land_daily_latin_america/2m_temperature_mean/", 
@@ -47,11 +53,16 @@ files_2m_temperature_mean <- list.files(
   full.names = TRUE
 )
 
+files_2m_temperature_mean <- files_2m_temperature_mean[grepl("(200[0-9]|201[0-9]|202[0-2])", files_2m_temperature_mean)]
+
+
 files_total_precipitation <- list.files(
   path = "/media/raphael/lacie/era5land_daily_latin_america/total_precipitation/", 
   pattern = ".nc$",
   full.names = TRUE
 )
+
+files_total_precipitation <- files_total_precipitation[grepl("(200[0-9]|201[0-9]|202[0-2])", files_total_precipitation)]
 
 
 
