@@ -6,7 +6,7 @@
 
 
 
-compute_zonal_statistics <- function(files_list, sf_geom, zonal_list, db_file, files_pop){
+compute_zonal_statistics_pop <- function(files_list, sf_geom, zonal_list, db_file, files_pop){
 
   zonal_tasks_2000 <- zonalclim::create_zonal_tasks(
     nc_files_list = files_list[grepl("2000", files_list)],

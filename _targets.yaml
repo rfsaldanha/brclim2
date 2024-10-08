@@ -13,3 +13,6 @@ mozambique_2000_2022:
 chile_2000_2022:
   script: chile_2000_2022.R
   store: chile_2000_2022
+brazil_brdwgd_20240320:
+  script: brazil_brdwgd_20240320.R
+  store: brazil_brdwgd_20240320
