@@ -107,7 +107,7 @@ list(
 
   ### pr
   tar_target(
-    name = pt_sqlite,
+    name = pr_sqlite,
     command = compute_zonal_statistics(
       files_list = files_pr,
       sf_geom = mun_geom,
@@ -221,7 +221,7 @@ list(
     format = "file"
   ),
 
-  ### tmax
+  ### tmin
   tar_target(
     name = tmin_sqlite,
     command = compute_zonal_statistics(
