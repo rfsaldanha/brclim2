@@ -41,5 +41,8 @@ rsconnect/
 *.parquet
 *.zip
 mozambique_2000_2022
+terraclimate/
+
+# Keys
 googleauthr-auth-key.json
 googlecloudstorager-auth-key.json
