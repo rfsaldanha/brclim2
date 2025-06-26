@@ -19,3 +19,6 @@ brazil_brdwgd_20240320:
 brazil_terraclimate_2000_2023:
   script: brazil_terraclimate_2000_2023.R
   store: brazil_terraclimate_2000_2023
+brazil_2024:
+  script: brazil_2024.R
+  store: brazil_2024

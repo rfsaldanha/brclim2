@@ -6,7 +6,7 @@
 # targets::tar_config_set(script = "chile_2000_2022.R", store = "chile_2000_2022", project = "chile_2000_2022")
 # targets::tar_config_set(script = "brazil_brdwgd_20240320.R", store = "brazil_brdwgd_20240320", project = "brazil_brdwgd_20240320")
 # targets::tar_config_set(script = "brazil_terraclimate_2000_2023.R", store = "brazil_terraclimate_2000_2023", project = "brazil_terraclimate_2000_2023")
-
+# targets::tar_config_set(script = "brazil_2024.R", store = "brazil_2024", project = "brazil_2024")
 
 ### Project selector
 # Sys.setenv(TAR_PROJECT = "chile_2000_2022")
@@ -16,3 +16,4 @@
 # Sys.setenv(TAR_PROJECT = "brazil_2000_2020_wpop")
 # Sys.setenv(TAR_PROJECT = "brazil_brdwgd_20240320")
 # Sys.setenv(TAR_PROJECT = "brazil_terraclimate_2000_2023")
+# Sys.setenv(TAR_PROJECT = "brazil_2024")
