@@ -1,4 +1,3 @@
-
 # Packages and options ----------------------------------------------------
 
 ### Load packages required to define the pipeline:
@@ -10,7 +9,7 @@ library(qs)
 ### Set target options:
 tar_option_set(
   packages = c("zonalclim", "DBI", "RSQLite", "duckdb", "glue"),
-  format = "qs", 
+  format = "qs",
   controller = crew::crew_controller_local(workers = 4)
 )
 
@@ -30,34 +29,31 @@ mun_geom <- qread(file = "input_data/mozambique_geom.qs")
 
 # Climate NetCDF file paths
 files_2m_temperature_max <- list.files(
-  path = "/media/raphael/lacie/era5land_daily_mozambique/2m_temperature_max/", 
+  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/2m_temperature_max/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_2m_temperature_min <- list.files(
-  path = "/media/raphael/lacie/era5land_daily_mozambique/2m_temperature_min/", 
+  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/2m_temperature_min/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_2m_temperature_mean <- list.files(
-  path = "/media/raphael/lacie/era5land_daily_mozambique/2m_temperature_mean/", 
+  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/2m_temperature_mean/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_total_precipitation <- list.files(
-  path = "/media/raphael/lacie/era5land_daily_mozambique/total_precipitation/", 
+  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/total_precipitation/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 
-
 # Targets -----------------------------------------------------------------
-
-
 
 # Replace the target list below with your own:
 list(
@@ -89,7 +85,7 @@ list(
     ),
     format = "file"
   ),
-  
+
   ### Min temp
   tar_target(
     name = min_temperature_data_sqlite,
@@ -118,7 +114,7 @@ list(
     ),
     format = "file"
   ),
-  
+
   ### Mean temp
   tar_target(
     name = mean_temperature_data_sqlite,
@@ -147,8 +143,7 @@ list(
     ),
     format = "file"
   ),
-  
- 
+
   ### total precipitation
   tar_target(
     name = total_precipitation_data_sqlite,
@@ -177,6 +172,4 @@ list(
     ),
     format = "file"
   )
-  
-  
 )
