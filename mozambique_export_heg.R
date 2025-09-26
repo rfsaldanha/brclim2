@@ -109,7 +109,7 @@ prec_mean <- open_dataset(
   ungroup() |>
   mutate(
     code_muni = as.character(code_muni),
-    tipo = 4
+    tipo = 9
   ) |>
   rename(cod = code_muni, ano = year, mes = month, valor = value) |>
   select(cod, ano, mes, tipo, valor) |>
