@@ -22,3 +22,9 @@ brazil_terraclimate_2000_2023:
 brazil_2024:
   script: brazil_2024.R
   store: brazil_2024
+mozambique_2023_2024.R:
+  script: mozambique_2023_2024.R
+  store: mozambique_2023_2024.R
+mozambique_2023_2024:
+  script: mozambique_2023_2024.R
+  store: mozambique_2023_2024
