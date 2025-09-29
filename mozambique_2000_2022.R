@@ -29,25 +29,25 @@ mun_geom <- qread(file = "input_data/mozambique_geom.qs")
 
 # Climate NetCDF file paths
 files_2m_temperature_max <- list.files(
-  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/2m_temperature_max/",
+  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/2m_temperature_max/2000_2022/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_2m_temperature_min <- list.files(
-  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/2m_temperature_min/",
+  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/2m_temperature_min/2000_2022/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_2m_temperature_mean <- list.files(
-  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/2m_temperature_mean/",
+  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/2m_temperature_mean/2000_2022/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_total_precipitation <- list.files(
-  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/total_precipitation/",
+  path = "/media/raphaelsaldanha/lacie/era5land_daily_africa/total_precipitation/2000_2022/",
   pattern = ".nc$",
   full.names = TRUE
 )
