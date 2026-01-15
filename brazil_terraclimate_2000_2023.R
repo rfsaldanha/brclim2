@@ -1,4 +1,3 @@
-
 # Packages and options ----------------------------------------------------
 
 ### Load packages required to define the pipeline:
@@ -10,7 +9,7 @@ library(qs)
 ### Set target options:
 tar_option_set(
   packages = c("zonalclim", "DBI", "RSQLite", "duckdb", "glue"),
-  format = "qs", 
+  format = "qs",
   controller = crew::crew_controller_local(workers = 2)
 )
 
@@ -30,96 +29,94 @@ mun_geom <- qread(file = "input_data/mun_geom.qs")
 
 # Climate NetCDF file paths
 files_aet <- list.files(
-  path = "input_data/terraclimate/aet/", 
+  path = "input_data/terraclimate/aet/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_def <- list.files(
-  path = "input_data/terraclimate/def/", 
+  path = "input_data/terraclimate/def/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_pdsi <- list.files(
-  path = "input_data/terraclimate/pdsi/", 
+  path = "input_data/terraclimate/pdsi/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_pet <- list.files(
-  path = "input_data/terraclimate/pet/", 
+  path = "input_data/terraclimate/pet/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_ppt <- list.files(
-  path = "input_data/terraclimate/ppt/", 
+  path = "input_data/terraclimate/ppt/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_q <- list.files(
-  path = "input_data/terraclimate/q/", 
+  path = "input_data/terraclimate/q/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_aet <- list.files(
-  path = "input_data/terraclimate/aet/", 
+  path = "input_data/terraclimate/aet/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_soil <- list.files(
-  path = "input_data/terraclimate/soil/", 
+  path = "input_data/terraclimate/soil/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_srad <- list.files(
-  path = "input_data/terraclimate/srad/", 
+  path = "input_data/terraclimate/srad/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_swe <- list.files(
-  path = "input_data/terraclimate/swe/", 
+  path = "input_data/terraclimate/swe/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_tmax <- list.files(
-  path = "input_data/terraclimate/tmax/", 
+  path = "input_data/terraclimate/tmax/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_tmin <- list.files(
-  path = "input_data/terraclimate/tmin/", 
+  path = "input_data/terraclimate/tmin/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_vap <- list.files(
-  path = "input_data/terraclimate/vap/", 
+  path = "input_data/terraclimate/vap/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_vpd <- list.files(
-  path = "input_data/terraclimate/vpd/", 
+  path = "input_data/terraclimate/vpd/",
   pattern = ".nc$",
   full.names = TRUE
 )
 
 files_ws <- list.files(
-  path = "input_data/terraclimate/ws/", 
+  path = "input_data/terraclimate/ws/",
   pattern = ".nc$",
   full.names = TRUE
 )
-
-
 
 
 # Targets -----------------------------------------------------------------
@@ -530,5 +527,4 @@ list(
     ),
     format = "file"
   )
-  
 )
